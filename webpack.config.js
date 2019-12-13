@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin  = require('mini-css-extract-plugin')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -76,6 +77,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: 'template.html',
+    }),
     new VuetifyLoaderPlugin(),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
